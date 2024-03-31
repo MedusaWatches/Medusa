@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medusa - Thinkerview</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/tabs.css">
+    <script src="./js/data.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/tabs.js"></script>
+    <script src="./js/intervenantes.js"></script>
+    <script src="./main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
+<script type="module" defer>
+    // Declare the chart dimensions and margins.
+const container = document.querySelector('#container');
+const width = 1200;
+const height = 400;
+const marginTop = 20;
+const marginRight = 20;
+const marginBottom = 30;
+const marginLeft = 40;
+const barHeight = 20;
+const plot = Plot.plot(
+    {
+        width: width,
+        height: ALL_NAMES.length * 30,
+        marginLeft: 150,
+        color: { legend: true },
+        x: {
+            label: "nombre de passages",
+            grid: true,
+            axis: "both",
+        },
+        marks: [
+            Plot.barX(ALL_NAMES, {
+                x: "nb", 
+                y: "name", 
+                fill: (a, i) => a.gender === 'F' ? '#5d9122' : '#e1d77e',
+                sort: { y: "x", reverse: true }
+            }),
+            
+            Plot.ruleX([0]),
+        ]
+    }
+)
+
+container.append(plot);
+</script>
+</head>
+
+<body>
+    <h1>Thinkerview</h1>
+    <div class="container--tabs">
+        <section class="row">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab-1">Vidéos</a></li>
+                <li class=""><a href="#tab-2">Intervenant·es</a></li>
+                <li class=""><a href="#tab-3">Genre</a></li>
+                <li class=""><a href="#tab-4">More</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane active">
+                    <p id="date">Date de mise à jour des données : </p>
+
+                    <div class="title-bloc">
+                        <h2 id="hdirect">Directs</h2>
+                        <a href="#hvideos">videos</a>
+                    </div>
+
+                    <div id="directs"></div>
+
+                    <div class="title-bloc">
+                        <h2 id="hvideos">Vidéos</h2>
+                        <a href="#hdirect">directs</a>
+                    </div>
+
+                    <div id="videos"></div>
+                </div>
+                <div id="tab-2" class="tab-pane">
+                    <p>Seulement sur les directs (vidéos non incluses)</p>
+                    <p>*Membre des Éconoclastes</p>
+                    <div id="intervenantes"></div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="passages">Directs</th>
+                                <th class="passages">Vidéos</th>
+                                <th class="passages">Cumul</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="int-data">
+                        </tbody>
+                    </table>
+                </div>
+                <div id="tab-3" class="tab-pane">
+
+                    <div id="container"></div>
+                </div>
+                <div id="tab-4" class="tab-pane">
+                    <h3>About</h3>
+                    <p>Medusa watches.</p>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

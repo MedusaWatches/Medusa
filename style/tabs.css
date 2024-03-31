@@ -1,0 +1,64 @@
+.container--tabs {
+    margin: 2rem;
+}
+
+.container--tabs .nav-tabs {
+    display: flex;
+    padding: 6px;
+    margin: 0;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.container--tabs .nav-tabs>li>a {
+    line-height: 1.42857143;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+    text-decoration: none;
+    color: var(--secondary);
+    text-shadow: 0 0 6px #000;
+    font-size: 16px;
+}
+
+.container--tabs .nav-tabs>li>a:hover {
+    border-color: var(--secondary);
+}
+
+.container--tabs .nav-tabs>li.active>a,
+.container--tabs .nav-tabs>li.active>a:hover,
+.container--tabs .nav-tabs>li.active>a:focus {
+    color: var(--accent);
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+.container--tabs .tab-content {
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    max-height: 80vh;
+    overflow-y: scroll;
+    color: black;
+}
+
+.container--tabs .tab-content>.tab-pane {
+    display: none;
+}
+
+.container--tabs .tab-content>.tab-pane.active {
+    display: block;
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.container--tabs .tab-content>.active {
+    display: block;
+}

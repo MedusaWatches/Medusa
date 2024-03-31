@@ -1,0 +1,88 @@
+:root {
+    --primary: #b3e17e;
+    --secondary: #e1d77e;
+    --accent: #5d9122;
+}
+
+body {
+    font-family: monospace;
+    background-color: #2e4811;
+    background-image: url('../img/medusa-tile.webp');
+    color: white;
+}
+
+h1 {
+    padding-left: 3em;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 6px #000;
+}
+
+a {
+    color: var(--accent);
+}
+
+.bloc {
+    display: flex;
+    height: 38px;
+    width: 100%;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+#videos:last-child {
+    border-bottom: 1px solid black;
+}
+
+#directs:last-child {
+    border-bottom: 1px solid black;
+}
+
+.vues,
+.time {
+    height: 19px;
+    background: var(--primary);
+    font-size: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.vues::before,
+.time::before {
+    content: ' ';
+}
+
+.title-bloc {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 12px;
+    overflow: hidden;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.time {
+    background: var(--secondary);
+    color: black;
+}
+
+.nb {
+    min-width: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+.data {
+    min-width: 40%;
+    background: #eee;
+}
+
+#intervenantes li {
+    list-style-type: none;
+}
