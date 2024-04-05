@@ -2145,6 +2145,12 @@ let interventions = [
         name: "Marc-Antoine Ledieu",
         gender: "M",
     },
+    {
+        id: 332,
+        title: "Intelligence artificielle, bullsh*t, pipotron ? Benjamin Bayart [EN DIRECT]",
+        name: "Benjamin Bayart",
+        gender: "M",
+    },
 ];
 
 const interventionsVideos = [

@@ -1,147 +1,161 @@
-const SCRAP_DATE = "22/03/2024";
+const SCRAP_DATE = "05/04/2024";
 let MAX_VUES = 0;
 let MAX_TIME = 0;
 
 const dataDirect = [
     {
+        rawTime: "2:36:30  ",
+        rawVues: "148k",
+        title: "Intelligence artificielle, bullsh*t, pipotron ? Benjamin Bayart [EN DIRECT]",
+        time: 9390,
+        vues: 148000,
+    },
+    {
+        rawTime: "3:41:22  ",
+        rawVues: "463k",
+        title: "Comprendre la guerre qui vient ? Henri Guaino [EN DIRECT]",
+        time: 13282,
+        vues: 463000,
+    },
+    {
         rawTime: "2:30:34  ",
-        rawVues: "71k",
+        rawVues: "247k",
         title: "Les Hackers face aux cyberguerres ? Bluetouff, Fabrice Epelboin et Marc-Antoine Ledieu [EN DIRECT]",
         time: 9034,
-        vues: 71000,
-    },
-    {
-        rawTime: "1:18:08  ",
-        rawVues: "110k",
-        title: "Animateur télé et show-business ? Valérie Damidot [EN DIRECT]",
-        time: 4688,
-        vues: 110000,
-    },
-    {
-        rawTime: "2:24:17  ",
-        rawVues: "226k",
-        title: "Rendre compte des catastrophes énergétiques et humanitaires ? Quentin Müller [EN DIRECT]",
-        time: 8657,
-        vues: 226000,
-    },
-    {
-        rawTime: "2:31:09  ",
-        rawVues: "459k",
-        title: "Économie : le mensonge face à la réalité ? Marc Touati [EN DIRECT]",
-        time: 9069,
-        vues: 459000,
-    },
-    {
-        rawTime: "1:47:02  ",
-        rawVues: "564k",
-        title: "Fichage politique, où va la France ? Marion Maréchal [EN DIRECT]",
-        time: 6422,
-        vues: 564000,
-    },
-    {
-        rawTime: "2:53:08  ",
-        rawVues: "203k",
-        title: "La mort de l'agriculture française ? Pierrick Horel et Quentin Le Guillous [EN DIRECT]",
-        time: 10388,
-        vues: 203000,
-    },
-    {
-        rawTime: "2:08:19  ",
-        rawVues: "296k",
-        title: "Mon Afrique va mal ? Tiken Jah Fakoly [EN DIRECT]",
-        time: 7699,
-        vues: 296000,
-    },
-    {
-        rawTime: "2:59:37  ",
-        rawVues: "250k",
-        title: "La Finance peut-elle arrêter de ruiner la planète ? Bertrand Badré [EN DIRECT]",
-        time: 10777,
-        vues: 250000,
-    },
-    {
-        rawTime: "1:55:16  ",
-        rawVues: "846k",
-        title: "Fabrice Éboué, plus rien à perdre ? [EN DIRECT]",
-        time: 6916,
-        vues: 846000,
-    },
-    {
-        rawTime: "2:24:08  ",
-        rawVues: "333k",
-        title: "Inflation, bientôt la révolution ? Dominique Schelcher [EN DIRECT]",
-        time: 8648,
-        vues: 333000,
-    },
-    {
-        rawTime: "2:18:12  ",
-        rawVues: "311k",
-        title: "Accueillir des migrants avec moins d'énergie ?  O. Delamarche et Charles-Henri Gallois [EN DIRECT]",
-        time: 8292,
-        vues: 311000,
-    },
-    {
-        rawTime: "2:20:21  ",
-        rawVues: "438k",
-        title: "Trahison des chefs, où va la France ? Guillaume Bigot [EN DIRECT]",
-        time: 8421,
-        vues: 438000,
-    },
-    {
-        rawTime: "2:16:16  ",
-        rawVues: "382k",
-        title: "IA : notre futur assistant ou nouveau maître ? Justine Cassell et Cédric Villani [EN DIRECT]",
-        time: 8176,
-        vues: 382000,
-    },
-    {
-        rawTime: "2:34:40  ",
-        rawVues: "247k",
-        title: "Souveraineté alimentaire face au dérèglement climatique ? Serge Zaka [EN DIRECT]",
-        time: 9280,
         vues: 247000,
     },
     {
-        rawTime: "2:45:46  ",
+        rawTime: "1:18:08  ",
+        rawVues: "125k",
+        title: "Animateur télé et show-business ? Valérie Damidot [EN DIRECT]",
+        time: 4688,
+        vues: 125000,
+    },
+    {
+        rawTime: "2:24:17  ",
+        rawVues: "247k",
+        title: "Rendre compte des catastrophes énergétiques et humanitaires ? Quentin Müller [EN DIRECT]",
+        time: 8657,
+        vues: 247000,
+    },
+    {
+        rawTime: "2:31:09  ",
+        rawVues: "481k",
+        title: "Économie : le mensonge face à la réalité ? Marc Touati [EN DIRECT]",
+        time: 9069,
+        vues: 481000,
+    },
+    {
+        rawTime: "1:47:02  ",
+        rawVues: "581k",
+        title: "Fichage politique, où va la France ? Marion Maréchal [EN DIRECT]",
+        time: 6422,
+        vues: 581000,
+    },
+    {
+        rawTime: "2:53:08  ",
+        rawVues: "207k",
+        title: "La mort de l'agriculture française ? Pierrick Horel et Quentin Le Guillous [EN DIRECT]",
+        time: 10388,
+        vues: 207000,
+    },
+    {
+        rawTime: "2:08:19  ",
         rawVues: "303k",
-        title: "Deux économistes sous stress-test ? Julia Cagé et Thomas Piketty [EN DIRECT]",
-        time: 9946,
+        title: "Mon Afrique va mal ? Tiken Jah Fakoly [EN DIRECT]",
+        time: 7699,
         vues: 303000,
     },
     {
+        rawTime: "2:59:37  ",
+        rawVues: "254k",
+        title: "La Finance peut-elle arrêter de ruiner la planète ? Bertrand Badré [EN DIRECT]",
+        time: 10777,
+        vues: 254000,
+    },
+    {
+        rawTime: "1:55:16  ",
+        rawVues: "882k",
+        title: "Fabrice Éboué, plus rien à perdre ? [EN DIRECT]",
+        time: 6916,
+        vues: 882000,
+    },
+    {
+        rawTime: "2:24:08  ",
+        rawVues: "335k",
+        title: "Inflation, bientôt la révolution ? Dominique Schelcher [EN DIRECT]",
+        time: 8648,
+        vues: 335000,
+    },
+    {
+        rawTime: "2:18:12  ",
+        rawVues: "314k",
+        title: "Accueillir des migrants avec moins d'énergie ?  O. Delamarche et Charles-Henri Gallois [EN DIRECT]",
+        time: 8292,
+        vues: 314000,
+    },
+    {
+        rawTime: "2:20:21  ",
+        rawVues: "441k",
+        title: "Trahison des chefs, où va la France ? Guillaume Bigot [EN DIRECT]",
+        time: 8421,
+        vues: 441000,
+    },
+    {
+        rawTime: "2:16:16  ",
+        rawVues: "385k",
+        title: "IA : notre futur assistant ou nouveau maître ? Justine Cassell et Cédric Villani [EN DIRECT]",
+        time: 8176,
+        vues: 385000,
+    },
+    {
+        rawTime: "2:34:40  ",
+        rawVues: "248k",
+        title: "Souveraineté alimentaire face au dérèglement climatique ? Serge Zaka [EN DIRECT]",
+        time: 9280,
+        vues: 248000,
+    },
+    {
+        rawTime: "2:45:46  ",
+        rawVues: "304k",
+        title: "Deux économistes sous stress-test ? Julia Cagé et Thomas Piketty [EN DIRECT]",
+        time: 9946,
+        vues: 304000,
+    },
+    {
         rawTime: "2:09:35  ",
-        rawVues: "545k",
+        rawVues: "548k",
         title: "Comment devient-on bourreau ? Pierre Conesa [EN DIRECT]",
         time: 7775,
-        vues: 545000,
+        vues: 548000,
     },
     {
         rawTime: "1:58:02  ",
-        rawVues: "196k",
+        rawVues: "197k",
         title: "Produire en France, au-delà de l'inquiétude ? Loïk Le Floch-Prigent et Nicolas Meilhan [EN DIRECT]",
         time: 7082,
-        vues: 196000,
+        vues: 197000,
     },
     {
         rawTime: "2:28:06  ",
-        rawVues: "621k",
+        rawVues: "624k",
         title: "Dans le mur, quoi qu’il en coûte ? François Lenglet [EN DIRECT]",
         time: 8886,
-        vues: 621000,
+        vues: 624000,
     },
     {
         rawTime: "2:28:26  ",
-        rawVues: "462k",
+        rawVues: "465k",
         title: "IA : le devenir légume de l’humanité ? Éric Sadin [EN DIRECT]",
         time: 8906,
-        vues: 462000,
+        vues: 465000,
     },
     {
         rawTime: "2:23:42  ",
-        rawVues: "453k",
+        rawVues: "456k",
         title: "La faillite du système bancaire ? Jacques de Larosière et Tom Benoit [EN DIRECT]",
         time: 8622,
-        vues: 453000,
+        vues: 456000,
     },
     {
         rawTime: "1:20:44  ",
@@ -152,17 +166,17 @@ const dataDirect = [
     },
     {
         rawTime: "2:41:07  ",
-        rawVues: "674k",
+        rawVues: "677k",
         title: "Bataille de civilisation dans un monde en ruine ? Jean-Luc Mélenchon [EN DIRECT]",
         time: 9667,
-        vues: 674000,
+        vues: 677000,
     },
     {
         rawTime: "2:18:25  ",
-        rawVues: "444k",
+        rawVues: "446k",
         title: "La guerre des intelligences ? Laurent Alexandre [EN DIRECT]",
         time: 8305,
-        vues: 444000,
+        vues: 446000,
     },
     {
         rawTime: "2:36:22  ",
@@ -173,10 +187,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:15:15  ",
-        rawVues: "699k",
+        rawVues: "701k",
         title: "Second tour, fable politique ? Albert Dupontel [EN DIRECT]",
         time: 4515,
-        vues: 699000,
+        vues: 701000,
     },
     {
         rawTime: "2:15:33  ",
@@ -201,17 +215,17 @@ const dataDirect = [
     },
     {
         rawTime: "1:55:22  ",
-        rawVues: "382k",
+        rawVues: "383k",
         title: "Les émeutes de la pauvreté ? Olivier De Schutter [EN DIRECT]",
         time: 6922,
-        vues: 382000,
+        vues: 383000,
     },
     {
         rawTime: "3:19:15  ",
-        rawVues: "798k",
+        rawVues: "815k",
         title: "Stratège de guerre : Sabotages, Cupidité et Agressions ? Jérôme Clech [EN DIRECT]",
         time: 11955,
-        vues: 798000,
+        vues: 815000,
     },
     {
         rawTime: "2:17:47  ",
@@ -222,17 +236,17 @@ const dataDirect = [
     },
     {
         rawTime: "1:43:28  ",
-        rawVues: "360k",
+        rawVues: "361k",
         title: "Immigration, où va la France ? Estelle Youssouffa [EN DIRECT]",
         time: 6208,
-        vues: 360000,
+        vues: 361000,
     },
     {
         rawTime: "2:19:50  ",
-        rawVues: "528k",
+        rawVues: "529k",
         title: "Domination Globale : Taïwan ? Wu Chih-chung [EN DIRECT]",
         time: 8390,
-        vues: 528000,
+        vues: 529000,
     },
     {
         rawTime: "3:17:20  ",
@@ -243,10 +257,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:12:06  ",
-        rawVues: "930k",
+        rawVues: "932k",
         title: "France : la stratégie du canard sans tête ? Yves Bréchet [EN DIRECT]",
         time: 7926,
-        vues: 930000,
+        vues: 932000,
     },
     {
         rawTime: "2:06:25  ",
@@ -257,10 +271,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:00:37  ",
-        rawVues: "254k",
+        rawVues: "255k",
         title: "Marchés financiers sans éthique : quels sont les risques ? Eva Sadoun [EN DIRECT]",
         time: 7237,
-        vues: 254000,
+        vues: 255000,
     },
     {
         rawTime: "2:33:19  ",
@@ -292,10 +306,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:21:33  ",
-        rawVues: "458k",
+        rawVues: "459k",
         title: "EDF : Saccagé délibérément par l'Europe ? Henri Proglio [EN DIRECT]",
         time: 4893,
-        vues: 458000,
+        vues: 459000,
     },
     {
         rawTime: "2:18:58  ",
@@ -320,10 +334,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:06:50  ",
-        rawVues: "492k",
+        rawVues: "493k",
         title: "Une formidable crise financière en perspective ? Jézabel Couppey-Soubeyran [EN DIRECT]",
         time: 7610,
-        vues: 492000,
+        vues: 493000,
     },
     {
         rawTime: "2:25:11  ",
@@ -369,10 +383,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:51:49  ",
-        rawVues: "527k",
+        rawVues: "528k",
         title: "La malbouffe contre-attaque ? Christophe Brusset [EN DIRECT]",
         time: 6709,
-        vues: 527000,
+        vues: 528000,
     },
     {
         rawTime: "2:48:31  ",
@@ -383,10 +397,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:43:17  ",
-        rawVues: "271k",
+        rawVues: "272k",
         title: "Le chimpanzé qui murmurait à l'oreille de l'homme ? Frans de Waal [EN DIRECT]",
         time: 6197,
-        vues: 271000,
+        vues: 272000,
     },
     {
         rawTime: "1:37:50  ",
@@ -411,10 +425,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:39:23  ",
-        rawVues: "894k",
+        rawVues: "895k",
         title: "Les bellicistes de plateaux TV, complexe militaro-intellectuel ? Pierre Conesa [EN DIRECT]",
         time: 5963,
-        vues: 894000,
+        vues: 895000,
     },
     {
         rawTime: "2:35:59  ",
@@ -432,10 +446,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:10:29  ",
-        rawVues: "219k",
+        rawVues: "220k",
         title: "La science-fiction prédit la guerre ? August Cole [EN DIRECT]",
         time: 7829,
-        vues: 219000,
+        vues: 220000,
     },
     {
         rawTime: "2:11:53  ",
@@ -446,10 +460,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:04:47  ",
-        rawVues: "763k",
+        rawVues: "766k",
         title: "35 ans de DGSE, une pointe de diamant ? Alain Chouet [EN DIRECT]",
         time: 7487,
-        vues: 763000,
+        vues: 766000,
     },
     {
         rawTime: "2:05:41  ",
@@ -460,10 +474,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:05:34  ",
-        rawVues: "745k",
+        rawVues: "746k",
         title: "Tempête géopolitique ? Pascal Boniface [EN DIRECT]",
         time: 7534,
-        vues: 745000,
+        vues: 746000,
     },
     {
         rawTime: "1:43:14  ",
@@ -481,10 +495,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:11:24  ",
-        rawVues: "958k",
+        rawVues: "959k",
         title: "Où va la France ? Jean-Luc Mélenchon - Part 2 [EN DIRECT]",
         time: 7884,
-        vues: 958000,
+        vues: 959000,
     },
     {
         rawTime: "2:30:39  ",
@@ -509,10 +523,10 @@ const dataDirect = [
     },
     {
         rawTime: "3:04:16  ",
-        rawVues: "1,3Mde",
+        rawVues: "1,4Mde",
         title: "L'emprise, la France sous influence ? Marc Endeweld [EN DIRECT]",
         time: 11056,
-        vues: 1300000,
+        vues: 1400000,
     },
     {
         rawTime: "2:48:27  ",
@@ -544,24 +558,24 @@ const dataDirect = [
     },
     {
         rawTime: "2:06:28  ",
-        rawVues: "547k",
+        rawVues: "548k",
         title: "L'art de la guerre et du commandement ? Loïc Finaz [EN DIRECT]",
         time: 7588,
-        vues: 547000,
+        vues: 548000,
     },
     {
         rawTime: "1:19:09  ",
-        rawVues: "827k",
+        rawVues: "829k",
         title: "Science et société, où va-t-on ? Étienne Klein [EN DIRECT]",
         time: 4749,
-        vues: 827000,
+        vues: 829000,
     },
     {
         rawTime: "2:12:28  ",
-        rawVues: "935k",
+        rawVues: "937k",
         title: "Militarisation de la langue ? Clément Viktorovitch [EN DIRECT]",
         time: 7948,
-        vues: 935000,
+        vues: 937000,
     },
     {
         rawTime: "2:33:27  ",
@@ -649,10 +663,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:55:59  ",
-        rawVues: "307k",
+        rawVues: "308k",
         title: "66% d'abstention : la grande confusion ? Philippe Corcuff [EN DIRECT]",
         time: 6959,
-        vues: 307000,
+        vues: 308000,
     },
     {
         rawTime: "2:09:00  ",
@@ -663,17 +677,17 @@ const dataDirect = [
     },
     {
         rawTime: "1:44:27  ",
-        rawVues: "363k",
+        rawVues: "364k",
         title: "La satire avant la guerre ? Bruno Gaccio [EN DIRECT]",
         time: 6267,
-        vues: 363000,
+        vues: 364000,
     },
     {
         rawTime: "2:31:53  ",
-        rawVues: "671k",
+        rawVues: "672k",
         title: "Militaires en colère ? Henri Bentégeat [EN DIRECT]",
         time: 9113,
-        vues: 671000,
+        vues: 672000,
     },
     {
         rawTime: "2:58:06  ",
@@ -698,10 +712,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:20:30  ",
-        rawVues: "646k",
+        rawVues: "647k",
         title: "Démocratie : Épiphénomène historique, sécession des élites ? Barbara Stiegler [EN DIRECT]",
         time: 8430,
-        vues: 646000,
+        vues: 647000,
     },
     {
         rawTime: "1:41:44  ",
@@ -712,10 +726,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:19:57  ",
-        rawVues: "901k",
+        rawVues: "902k",
         title: "Les radicalismes religieux et le Lobby Saoudien en France ? Pierre Conesa [EN DIRECT]",
         time: 8397,
-        vues: 901000,
+        vues: 902000,
     },
     {
         rawTime: "2:23:27  ",
@@ -768,17 +782,17 @@ const dataDirect = [
     },
     {
         rawTime: "2:50:28  ",
-        rawVues: "876k",
+        rawVues: "877k",
         title: "COVID 19 : La faillite occidentale ? Renaud Piarroux [ EN DIRECT ]",
         time: 10228,
-        vues: 876000,
+        vues: 877000,
     },
     {
         rawTime: "2:55:04  ",
-        rawVues: "651k",
+        rawVues: "652k",
         title: "En route vers la dictature ? Christophe Deloire [EN DIRECT]",
         time: 10504,
-        vues: 651000,
+        vues: 652000,
     },
     {
         rawTime: "2:29:20  ",
@@ -999,10 +1013,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:39:03  ",
-        rawVues: "730k",
+        rawVues: "731k",
         title: "Humour, pensée formatée et politiquement correct ? Thomas Wiesel [EN DIRECT]",
         time: 5943,
-        vues: 730000,
+        vues: 731000,
     },
     {
         rawTime: "2:43:52  ",
@@ -1034,10 +1048,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:28:50  ",
-        rawVues: "409k",
+        rawVues: "410k",
         title: "Crise de la masculinité ? Francis Dupuis-Déri [EN DIRECT]",
         time: 8930,
-        vues: 409000,
+        vues: 410000,
     },
     {
         rawTime: "2:08:05  ",
@@ -1062,10 +1076,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:20:47  ",
-        rawVues: "723k",
+        rawVues: "724k",
         title: "Clientélisme politique et Moyen-Orient : Agnès Levallois et Pierre Conesa [EN DIRECT]",
         time: 8447,
-        vues: 723000,
+        vues: 724000,
     },
     {
         rawTime: "2:07:49  ",
@@ -1097,10 +1111,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:21:14  ",
-        rawVues: "856k",
+        rawVues: "858k",
         title: "DGSE : Face à la réalité ? Talk with a spy [EN DIRECT]",
         time: 8474,
-        vues: 856000,
+        vues: 858000,
     },
     {
         rawTime: "2:29:10  ",
@@ -1195,10 +1209,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:31:48  ",
-        rawVues: "909k",
+        rawVues: "910k",
         title: "Mediapart : Benalla, Macron, le journalisme menacé ?  [EN DIRECT]",
         time: 5508,
-        vues: 909000,
+        vues: 910000,
     },
     {
         rawTime: "1:24:55  ",
@@ -1265,10 +1279,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:59:30  ",
-        rawVues: "625k",
+        rawVues: "626k",
         title: "Noam Anouar : Lucidité face aux terrorismes ?  [EN DIRECT]",
         time: 7170,
-        vues: 625000,
+        vues: 626000,
     },
     {
         rawTime: "1:36:14  ",
@@ -1286,10 +1300,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:36:17  ",
-        rawVues: "379k",
+        rawVues: "380k",
         title: "Société à bout de souffle ? Aymeric Caron [EN DIRECT]",
         time: 5777,
-        vues: 379000,
+        vues: 380000,
     },
     {
         rawTime: "2:12:15  ",
@@ -1307,10 +1321,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:25:42  ",
-        rawVues: "933k",
+        rawVues: "934k",
         title: "François Bégaudeau : Gilets Jaunes, Populisme, Bourgeois ? [EN DIRECT]",
         time: 5142,
-        vues: 933000,
+        vues: 934000,
     },
     {
         rawTime: "46:11  ",
@@ -1384,10 +1398,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:04:33  ",
-        rawVues: "292k",
+        rawVues: "293k",
         title: "Corruption, : Maladie de la France ?Jean-Christophe Picard, Anticor sans filtre [EN DIRECT]",
         time: 3873,
-        vues: 292000,
+        vues: 293000,
     },
     {
         rawTime: "1:06:36  ",
@@ -1398,10 +1412,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:32:29  ",
-        rawVues: "710k",
+        rawVues: "711k",
         title: "Jérémy Ferrari : la révolte par l'humour ? [EN DIRECT]",
         time: 5549,
-        vues: 710000,
+        vues: 711000,
     },
     {
         rawTime: "1:50:10  ",
@@ -1433,10 +1447,10 @@ const dataDirect = [
     },
     {
         rawTime: "2:19:59  ",
-        rawVues: "696k",
+        rawVues: "697k",
         title: "Éric Sadin : l'asservissement par l'Intelligence Artificielle ? [EN DIRECT]",
         time: 8399,
-        vues: 696000,
+        vues: 697000,
     },
     {
         rawTime: "2:13:51  ",
@@ -1468,10 +1482,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:38:30  ",
-        rawVues: "456k",
+        rawVues: "457k",
         title: "P. Servigne & J. Blamont : Introduction au siècle des menaces [EN DIRECT]",
         time: 5910,
-        vues: 456000,
+        vues: 457000,
     },
     {
         rawTime: "1:54:31  ",
@@ -1524,10 +1538,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:38:48  ",
-        rawVues: "2Mde",
+        rawVues: "2,1Mde",
         title: "Quand la Science appelle à l'aide pour l'humanité ? Aurélien Barrau [EN DIRECT]",
         time: 5928,
-        vues: 2000000,
+        vues: 2100000,
     },
     {
         rawTime: "1:22:41  ",
@@ -1615,10 +1629,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:16:37  ",
-        rawVues: "310k",
+        rawVues: "311k",
         title: "Le langage au service des puissants ? Alain Deneault [EN DIRECT]",
         time: 4597,
-        vues: 310000,
+        vues: 311000,
     },
     {
         rawTime: "1:39:32  ",
@@ -1629,10 +1643,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:46:15  ",
-        rawVues: "950k",
+        rawVues: "951k",
         title: "Pierre Conesa : Propagande de Guerre, Cinéma, Géopolitique, Opinion publique [EN DIRECT]",
         time: 6375,
-        vues: 950000,
+        vues: 951000,
     },
     {
         rawTime: "2:05:09  ",
@@ -1657,10 +1671,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:54:33  ",
-        rawVues: "288k",
+        rawVues: "289k",
         title: "Big Brother habite Place Beauvau ? Exégèse en libertés [EN DIRECT]",
         time: 6873,
-        vues: 288000,
+        vues: 289000,
     },
     {
         rawTime: "1:18:34  ",
@@ -1720,17 +1734,17 @@ const dataDirect = [
     },
     {
         rawTime: "1:35:59  ",
-        rawVues: "188k",
+        rawVues: "189k",
         title: "La police au service du marché ? Mathieu Rigouste [EN DIRECT]",
         time: 5759,
-        vues: 188000,
+        vues: 189000,
     },
     {
         rawTime: "1:04:41  ",
-        rawVues: "823k",
+        rawVues: "824k",
         title: "Étienne Klein : Éthique et philosophie des sciences, le rôle des scientifiques ? [EN DIRECT]",
         time: 3881,
-        vues: 823000,
+        vues: 824000,
     },
     {
         rawTime: "1:14:41  ",
@@ -1797,10 +1811,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:18:56  ",
-        rawVues: "649k",
+        rawVues: "650k",
         title: "Cédric Villani : Intelligence artificielle perspectives futures [EN DIRECT]",
         time: 4736,
-        vues: 649000,
+        vues: 650000,
     },
     {
         rawTime: "45:38  ",
@@ -1874,10 +1888,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:04:48  ",
-        rawVues: "421k",
+        rawVues: "422k",
         title: "Benjamin Bayart, Grand Sorcier de l'Internet option vie privée [EN DIRECT]",
         time: 3888,
-        vues: 421000,
+        vues: 422000,
     },
     {
         rawTime: "1:02:44  ",
@@ -1895,10 +1909,10 @@ const dataDirect = [
     },
     {
         rawTime: "1:12:25  ",
-        rawVues: "443k",
+        rawVues: "444k",
         title: "Juan Branco, avocat de Wikileaks [EN DIRECT]",
         time: 4345,
-        vues: 443000,
+        vues: 444000,
     },
     {
         rawTime: "1:04:25  ",
@@ -1912,17 +1926,17 @@ const dataDirect = [
 const dataVideo = [
     {
         rawTime: "2:02:00  ",
-        rawVues: "190k",
+        rawVues: "192k",
         title: "[VO] Mégamenaces, un avenir sombre, des politiques dans le déni ? Nouriel Roubini [EN DIRECT]",
         time: 7320,
-        vues: 190000,
+        vues: 192000,
     },
     {
         rawTime: "2:10:49  ",
-        rawVues: "136k",
+        rawVues: "137k",
         title: "La science-fiction prédit la guerre ? August Cole [VO]",
         time: 7849,
-        vues: 136000,
+        vues: 137000,
     },
     {
         rawTime: "1:26:02  ",
@@ -1933,17 +1947,17 @@ const dataVideo = [
     },
     {
         rawTime: "1:46:28  ",
-        rawVues: "290k",
+        rawVues: "291k",
         title: "[ VF ] Collapsologie, anxiété et dépression ? Glenn Albrecht [EN DIRECT]",
         time: 6388,
-        vues: 290000,
+        vues: 291000,
     },
     {
         rawTime: "1:02:48  ",
-        rawVues: "116k",
+        rawVues: "117k",
         title: "Lutter sans violence ? Jean-Marie Muller [EN DIRECT]",
         time: 3768,
-        vues: 116000,
+        vues: 117000,
     },
     {
         rawTime: "1:07:53  ",
@@ -1989,17 +2003,17 @@ const dataVideo = [
     },
     {
         rawTime: "49:18  ",
-        rawVues: "127k",
+        rawVues: "128k",
         title: "États-Unis-Russie : Tensions Géopolitiques et Terrorisme",
         time: 2958,
-        vues: 127000,
+        vues: 128000,
     },
     {
         rawTime: "44:43  ",
-        rawVues: "112k",
+        rawVues: "113k",
         title: "Paul Watson, fondateur de Sea Shepherd : Plongée en eaux troubles",
         time: 2683,
-        vues: 112000,
+        vues: 113000,
     },
     {
         rawTime: "1:05:24  ",
