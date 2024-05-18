@@ -28,6 +28,7 @@ var res = [];
 var all = document.getElementsByTagName("ytd-rich-item-renderer");
 for (let i = 0; i < all.length - 1; i++) {
     // console.info(i, all[i].querySelectorAll('.ytd-thumbnail-overlay-time-status-renderer')[1].textContent.replace(/(^\n\s+)|(\n)/gi, ''), all[i].querySelectorAll('.inline-metadata-item')[0].textContent.replace(/(vues)|(\s)/gi, ''));
+    console.log(all[i].innerHTML);
     var time = all[i]
         .querySelectorAll(".ytd-thumbnail-overlay-time-status-renderer")[1]
         .textContent.replace(/(^\n\s+)|(\n)/gi, "");
