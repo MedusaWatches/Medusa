@@ -33,7 +33,7 @@ for (let i = 0; i < all.length - 1; i++) {
         .textContent.replace(/(^\n\s+)|(\n)/gi, "");
     var vues = all[i]
         .querySelectorAll(".inline-metadata-item")[0]
-        .textContent.replace(/(vues)|(\s)/gi, "");
+        .textContent.replace(/(vues)|(\s)/gi, "").replace(/(views)|(\s)/gi, "");
     var sec = convertInSec(time);
     var total = convertVues(vues);
     res.push({
